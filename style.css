@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
+
+body {
+    background: linear-gradient(135deg, #e0f8e0 0%, #c1efb5 100%);
+    font-family: 'Baloo 2', cursive;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.rules-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 50;
+    font-weight: bold;
+}
+
+.rules-btn:hover {
+    transform: scale(1.1);
+    background-color: #45a049;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 30px;
+    max-width: 500px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#userInput {
+    border: 3px solid #4caf50;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 24px;
+    width: 200px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#userInput:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.check-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.check-btn:hover {
+    transform: scale(1.05);
+    background-color: #45a049;
+}
+
+#results {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 15px;
+}
+
+.result-item {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

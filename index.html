@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu Taureaux et Vaches Délire</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="rules-btn" id="rulesBtn">?</div>
+
+    <div class="game-container">
+        <h1 class="text-4xl font-bold text-center mb-4 text-green-700">🐄 Taureaux et Vaches Délire 🐂</h1>
+        <p class="text-center mb-6 text-green-600">Trouvez le nombre secret à 4 chiffres uniques !</p>
+        
+        <div class="input-container">
+            <input type="text" id="userInput" maxlength="4" placeholder="????">
+            <button id="checkBtn" class="check-btn">Vérifier</button>
+        </div>
+        
+        <div id="results" class="text-center"></div>
+    </div>
+
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+            <h2 class="text-2xl font-bold mb-4 text-green-700">🎲 Règles du Jeu</h2>
+            <div class="text-left space-y-4">
+                <p><strong>🎯 Objectif :</strong> Deviner un nombre secret à 4 chiffres uniques.</p>
+                <p><strong>🐂 Taureaux :</strong> Chiffres corrects à la bonne position.</p>
+                <p><strong>🐄 Vaches :</strong> Chiffres corrects mais à la mauvaise position.</p>
+                <p><strong>🔢 Règles :</strong></p>
+                <ul class="list-disc pl-5">
+                    <li>Le nombre secret a 4 chiffres différents</li>
+                    <li>Chaque essai doit être un nombre à 4 chiffres uniques</li>
+                    <li>Vous devinez jusqu'à trouver le nombre exact</li>
+                </ul>
+                <p><strong>💡 Exemple :</strong> Si le nombre secret est 1234</p>
+                <ul class="pl-5">
+                    <li>Si vous entrez 1243 : 2 Taureaux, 2 Vaches</li>
+                    <li>Si vous entrez 5678 : 0 Taureaux, 0 Vaches</li>
+                </ul>
+            </div>
+            <button id="closeRulesModal" class="mt-4 w-full bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                Commencer à Jouer
+            </button>
+            
+        </div>
+    </div>
+    <div id="validationModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-xl text-center max-w-sm w-full">
+            <h2 class="text-2xl font-bold mb-4 text-red-600">Attention !</h2>
+            <p id="modalMessage" class="mb-6 text-lg"></p>
+            <button id="closeModal" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                Compris
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
